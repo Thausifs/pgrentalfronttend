@@ -22,6 +22,7 @@ export default function Header() {
     localStorage.removeItem("token");
     authContextData.setUser(undefined);
     authContextData.setToken(undefined);
+    window.location.replace("/");
   };
   return (
     <header className="sticky top-0 z-50 bg-white shadow">
