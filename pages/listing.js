@@ -177,7 +177,7 @@ const Listing = () => {
                       <li key={featureId}>
                         <a href="#">
                           <i className="bx bx-check"></i>{" "}
-                          {feature.feature_name}
+                          {feature?.feature_name}
                         </a>
                       </li>
                     ))}
