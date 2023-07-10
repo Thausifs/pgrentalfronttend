@@ -4053,10 +4053,13 @@ Listings Area CSS
   margin-top: 15px;
   padding-left: 0;
   padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .single-listings-item .listings-content .listings-meta li {
   display: inline-block;
-  margin-right: 12px;
+  /* margin-right: 12px; */
   color: var(--optionalColor);
   font-weight: 600;
   font-size: 14px;

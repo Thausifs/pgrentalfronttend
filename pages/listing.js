@@ -67,7 +67,7 @@ const Listing = () => {
                           <Icons.DownArrowIcon/>
                           </div>
                         </div>
-                        <ul className={cn("handle-collapse", {
+                        <ul className={cn("handle-collapse overflow-y-scroll", {
                           "show-collapse": showSelectFeatures,
                           "hide-collapse": !showSelectFeatures
                         })}>
@@ -128,7 +128,9 @@ const Listing = () => {
                   <img
                     style={{
                       width: "100%",
-                      height: "219px",
+                      height: "268px",
+
+
                     }}
                     src={`${
                       roomPhotos === 0
@@ -175,7 +177,7 @@ const Listing = () => {
                       <li key={featureId}>
                         <a href="#">
                           <i className="bx bx-check"></i>{" "}
-                          {feature.feature_name}
+                          {feature?.feature_name}
                         </a>
                       </li>
                     ))}

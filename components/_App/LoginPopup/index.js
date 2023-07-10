@@ -16,9 +16,12 @@ function LoginPopup({ open, hidePopup }) {
   const [resendTimer, setResendTimer] = useState(0);
   const [otp, setOtp] = useState("");
   const [wholeDisable, setWholeDisble] = useState(false);
+  
   const [disable, setDisable] = useState(true);
   const resendTimerRef = useRef(null);
   const authContTextData = useAuthContext();
+ 
+
   const onChangeHandlerForOtp = (e) => {
     console.log(e);
     setOtp(e.target.value);
@@ -81,6 +84,12 @@ function LoginPopup({ open, hidePopup }) {
 
       setOtp("");
       hidePopup();
+      if (authContTextData.user?.role === "admin"){
+      window.location.replace("/admin");
+      } else{
+      window.location.replace("/users/bookings/");
+    }
+      
     },
 
     onError: (error) => {
@@ -149,6 +158,7 @@ function LoginPopup({ open, hidePopup }) {
                       </label>
                       <div className="hidden sm:block sm:[&_input]:!w-[72px] sm:[&_input]:!h-[72px] [&_input]:!w-[50px] [&_input]:!h-[50px]">
                         <OtpInput fn={setOtp} />
+
                       </div>
                       <div className=" w-full">
                         <input  
@@ -162,6 +172,7 @@ function LoginPopup({ open, hidePopup }) {
                         {/* <label className="font-Lato inline-block mb-1 text-sm font-medium">
                           Recent Otp
                         </label> */}
+                        
                         <button
                         className="btn"
                         onClick={() => mutate({ number: phoneNo })}
@@ -169,11 +180,12 @@ function LoginPopup({ open, hidePopup }) {
                       >
                         Resend OTP
                       </button>
-                        
+                        {resendTimer}
                       </div>
                     </div>
                   </div>
-                  <ButtonTo
+                  <ButtonTo disabled={disable}
+
                     text="Login"
                     className="bg-green rounded-lg text-white px-6 py-3.5 border shadow-lg flex items-center gap-3 w-full text-center justify-center mt-6"
                   />
