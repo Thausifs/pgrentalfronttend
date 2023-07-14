@@ -78,13 +78,13 @@ export default function Home() {
       </div>
       <div className="relative md:pt-[200px] devices overflow-hidden">
         <img
-          src="/images/home/device.png"
+          src="images/home/device.png"
           className={`2xl:w-[33%] xl:w-[35%] lg:w-[35%] md:w-[38%] sm:w-[34%] w-[34%] absolute transition-all duration-[800ms] z-30 left-1/2 -translate-x-1/2 ${
             visibleSections.includes("devices") ? "bottom-0" : "-bottom-1/2"
           }`}
         />
         <img
-          src="/images/home/device_bg.jpeg"
+          src="images/home/device_bg.jpeg"
           className="object-cover w-full h-full"
         />
       </div>
@@ -98,16 +98,16 @@ export default function Home() {
             <div className="sm:col-span-8">
               <div className="grid grid-cols-3 !gap-5 relative xl:bottom-[100px] bottom-[100px] items-center">
                 <div>
-                  <img src="/images/home/kochi.png" className="w-full" />
+                  <img src="images/home/kochi.png" className="w-full" />
                 </div>
                 <div>
                   <img
-                    src="/images/home/bang.png"
+                    src="images/home/bang.png"
                     className="animate-bounce w-full"
                   />
                 </div>
                 <div>
-                  <img src="/images/home/chennai.png" className="w-full" />
+                  <img src="images/home/chennai.png" className="w-full" />
                 </div>
               </div>
             </div>
