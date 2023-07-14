@@ -12,7 +12,7 @@ import FoodOrdersModal from '../Modal/FoodOrdersModal';
 import cityApi from "../../utils/Api/city.api";
 import useCities from "../../utils/Hooks/useCities";
 import { MdCancel } from "react-icons/md";
-import { ReactComponent as Loaderr } from '../../public/images/svg/loader.svg'
+// import { ReactComponent as Loaderr } from '../../public/images/svg/loader.svg'
 // import { ExportToExcel } from '../helpers/ExportToExcel';
 import { exportToexcel } from '../helpers/ExportToExcel';
 
@@ -313,7 +313,7 @@ curr.setDate(curr.getDate());
                    
                   </div>
                   </> 
-                : <Loaderr className="spinner" />}
+                : null }
             </>
             
           })
