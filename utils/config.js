@@ -1,5 +1,5 @@
 const config = {
-  url: "http://54.91.231.131:1337",
+  url: "https://zestoss.onrender.com",
   razorpayKey: "rzp_test_Wb5N9rorHeJjEW",
 };
 
