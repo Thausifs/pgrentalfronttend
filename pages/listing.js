@@ -59,7 +59,7 @@ const Listing = () => {
                     <aside className="listings-widget-area">
                       <section className="widget widget_features">
                         <div onClick={() => setShowSelectFeatures(!showSelectFeatures)} className="feature-collapse">
-                          <h1 className="widget-title">Features</h1>
+                          <h1 className="widget-title">Filter by amenities</h1>
                           <div className={cn("transition h-25", {
                             "active-icon": showSelectFeatures,
                             "close-icon": !showSelectFeatures
