@@ -23,7 +23,7 @@ function LoginPopup({ open, hidePopup }) {
  
 
   const onChangeHandlerForOtp = (e) => {
-    console.log(e);
+    
     setOtp(e.target.value);
   };
   const { mutate, isSuccess } = useMutation({
@@ -36,7 +36,7 @@ function LoginPopup({ open, hidePopup }) {
       setWholeDisble(false);
     },
     onError: (error) => {
-      console.log(error);
+    
       // setWholeDisble(false);
       const message =
         error?.response?.data?.message || "Mobile Number does not exist";
@@ -75,6 +75,7 @@ function LoginPopup({ open, hidePopup }) {
       setWholeDisble(true);
     },
     onSuccess: (data) => {
+    
       toast.success(data.message);
       authContTextData.setToken(data.token);
       authContTextData.setUser(data.user);
@@ -93,14 +94,17 @@ function LoginPopup({ open, hidePopup }) {
     },
 
     onError: (error) => {
+     
       setWholeDisble(false);
-      const message = error?.response?.data?.message || "Otp is oncorrect";
+      const message = error?.response?.data?.message || "Otp is incorrect";
+       console.log(message)
       toast.error(message);
     },
   });
 
   const onSubmitForSendOtp = (e) => {
     e.preventDefault();
+    console.log(otp);
     if (otp === "") {
       mutate({ number: phoneNo });
       setWholeDisble(true);

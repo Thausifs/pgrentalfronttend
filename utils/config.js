@@ -3,7 +3,7 @@
 //   razorpayKey: "rzp_test_Wb5N9rorHeJjEW",
 // };
 const config = {
-  url: "https://zestoss.onrender.com",
+  url: "http://localhost:1337",
   razorpayKey: "rzp_test_Wb5N9rorHeJjEW",
 };
 

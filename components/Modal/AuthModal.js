@@ -59,30 +59,30 @@ function AuthModal({ displayAuth, toggleAuth }) {
     setDisable(true);
     setPhoneNo("");
   }, []);
-  const { mutate: verifyOtp, isSuccess: isSuccess2 } = useMutation({
-    mutationKey: "verifyOtpLogin",
-    mutationFn: (data) => authApi.verifyOtpForLogin(data),
-    onMutate: () => {
-      setWholeDisble(true);
-    },
-    onSuccess: (data) => {
-      toast.success(data.message);
-      authContTextData.setToken(data.token);
-      authContTextData.setUser(data.user);
-      localStorage.setItem("token", data.token);
-      setWholeDisble(false);
-      setDisable(true);
+  // const { mutateee: verifyOtptt, isSuccess: isSuccess2 } = useMutation({
+  //   mutationKey: "verifyOtpLogin",
+  //   mutationFn: (data) => authApi.verifyOtpForLogin(data),
+  //   onMutate: () => {
+  //     setWholeDisble(true);
+  //   },
+  //   onSuccess: (data) => {
+  //     toast.success(data.message);
+  //     authContTextData.setToken(data.token);
+  //     authContTextData.setUser(data.user);
+  //     localStorage.setItem("token", data.token);
+  //     setWholeDisble(false);
+  //     setDisable(true);
 
-      setOtp("");
-      toggleAuth();
-    },
+  //     setOtp("");
+  //     toggleAuth();
+  //   },
 
-    onError: (error) => {
-      setWholeDisble(false);
-      const message = error?.response?.data?.message || "Otp is oncorrect";
-      toast.error(message);
-    },
-  });
+  //   onError: (error) => {
+  //     setWholeDisble(false);
+  //     const message = error?.response?.data?.message || "Otp is incorrecttt";
+  //     toast.error(message);
+  //   },
+  // });
 
   const onSubmitForSendOtp = (e) => {
     e.preventDefault();
@@ -171,9 +171,9 @@ function AuthModal({ displayAuth, toggleAuth }) {
                       </div>
 
                       <button
-                        onClick={() => {
-                          verifyOtp({ otp: otp, number: phoneNo });
-                        }}
+                        // onClick={() => {
+                        //   verifyOtp({ otp: otp, number: phoneNo });
+                        // }}
                         disabled={disable || wholeDisable}
                         type="submit"
                         className="disabled"
