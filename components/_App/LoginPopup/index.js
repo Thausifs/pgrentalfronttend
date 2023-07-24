@@ -85,11 +85,11 @@ function LoginPopup({ open, hidePopup }) {
 
       setOtp("");
       hidePopup();
-      if (authContTextData.user?.role === "admin"){
-      window.location.replace("/admin");
-      } else{
-      window.location.replace("/users/bookings/");
-    }
+    //   if (authContTextData.user?.role === "admin"){
+    //   window.location.replace("/admin");
+    //   } else{
+    //   window.location.replace("/users/bookings/");
+    // }
       
     },
 
@@ -104,13 +104,16 @@ function LoginPopup({ open, hidePopup }) {
 
   const onSubmitForSendOtp = (e) => {
     e.preventDefault();
-    console.log(otp);
-    if (otp === "") {
+    
+    if (otp.length === 0) {
+      
       mutate({ number: phoneNo });
       setWholeDisble(true);
-    } else
-    setLoading(true)
-    verifyOtp({ otp: otp.toLowerCase(), number: phoneNo });
+    } else if (otp.length === 6) {
+      setLoading(true)
+      
+      verifyOtp({ otp: otp.toLowerCase(), number: phoneNo });
+    }
   };
   useEffect(() => {
     setTimeout(() => setLoading(false), 3000);
@@ -188,10 +191,10 @@ function LoginPopup({ open, hidePopup }) {
                       </div>
                     </div>
                   </div>
-                  <ButtonTo disabled={disable}
+                  <ButtonTo 
 
                     text="Login"
-                    className="bg-green rounded-lg text-white px-6 py-3.5 border shadow-lg flex items-center gap-3 w-full text-center justify-center mt-6"
+                    className="bg-green rounded-lg text-white px-6 py-3.5 border shadow-lg flex items-center gap-3 w-full text-center justify-center mt-6 curponbtn"
                   />
                 </form>
               </div>

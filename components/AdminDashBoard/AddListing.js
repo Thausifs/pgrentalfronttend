@@ -25,6 +25,7 @@ const UploadComponent = ({
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
+      console.log(acceptedFiles);
       setFieldValue(fieldName, acceptedFiles);
       setPreviewFiles(
         acceptedFiles.map((file) =>
@@ -33,6 +34,7 @@ const UploadComponent = ({
           })
         )
       );
+     
     },
   });
   const thumbs = previewFiles.map((file) => (

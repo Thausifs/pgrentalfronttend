@@ -18176,3 +18176,6 @@ Footer Area CSS
   transform: translateY(2px);
   background-color: rgb(66, 162, 166);
 }
+.curponbtn:hover {
+  cursor: pointer;
+}
