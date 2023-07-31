@@ -3,7 +3,7 @@
 //   razorpayKey: "rzp_test_Wb5N9rorHeJjEW",
 // };
 const config = {
-  url: "https://zestoss.onrender.com",
+  url: "https://zesstos-new-trsil.onrender.com",
   razorpayKey: "rzp_test_Wb5N9rorHeJjEW",
 };
 
